@@ -1,0 +1,566 @@
+{
+ "sample_materials": [
+  "MAT-0021",
+  "MAT-0028",
+  "MAT-0029",
+  "MAT-0033",
+  "MAT-0038",
+  "MAT-0049",
+  "MAT-0054",
+  "MAT-0056",
+  "MAT-0081",
+  "MAT-0085",
+  "MAT-0086",
+  "MAT-0087",
+  "MAT-0093",
+  "MAT-0095",
+  "MAT-0103",
+  "MAT-0105",
+  "MAT-0116",
+  "MAT-0126",
+  "MAT-0131",
+  "MAT-0132",
+  "MAT-0136",
+  "MAT-0141",
+  "MAT-0142",
+  "MAT-0159",
+  "MAT-0171",
+  "MAT-0177",
+  "MAT-0184",
+  "MAT-0185",
+  "MAT-0192",
+  "MAT-0196"
+ ],
+ "n_rep": 100,
+ "E1_kde_vs_normal_95": {
+  "fill_rate": {
+   "mean_a": 0.9450976389398522,
+   "mean_b": 0.9573889303114353,
+   "mean_diff_b_minus_a": 0.012291291371583054,
+   "ci95": [
+    0.002973868852232487,
+    0.02160871389093362
+   ],
+   "wilcoxon_p": 0.016431212425231934,
+   "n": 30
+  },
+  "cycle_service_level": {
+   "mean_a": 0.9570158730158729,
+   "mean_b": 0.9655714285714286,
+   "mean_diff_b_minus_a": 0.008555555555555509,
+   "ci95": [
+    0.0012689874167175676,
+    0.015842123694393452
+   ],
+   "wilcoxon_p": 0.036434996873140335,
+   "n": 30
+  },
+  "total_cost": {
+   "mean_a": 880336.9051592358,
+   "mean_b": 757743.6114120127,
+   "mean_diff_b_minus_a": -122593.29374722313,
+   "ci95": [
+    -320879.91247629374,
+    75693.32498184746
+   ],
+   "wilcoxon_p": 0.2710056286305189,
+   "n": 30
+  },
+  "avg_inventory_value": {
+   "mean_a": 1207720.641413856,
+   "mean_b": 1339055.7049121324,
+   "mean_diff_b_minus_a": 131335.06349827597,
+   "ci95": [
+    1092.5365797049308,
+    261577.590416847
+   ],
+   "wilcoxon_p": 0.016431212425231934,
+   "n": 30
+  },
+  "stockout_count": {
+   "mean_a": 1.286333333333333,
+   "mean_b": 1.0873333333333333,
+   "mean_diff_b_minus_a": -0.199,
+   "ci95": [
+    -0.4275781366035426,
+    0.02957813660354261
+   ],
+   "wilcoxon_p": 0.11907656863331795,
+   "n": 30
+  },
+  "backtest": {
+   "MAT-0021": {
+    "normal": {
+     "fill_rate": 0.970151661975543,
+     "cycle_service_level": 0.9545454545454546,
+     "total_cost": 53742.498926472785
+    },
+    "kde": {
+     "fill_rate": 0.9305786177942366,
+     "cycle_service_level": 0.9545454545454546,
+     "total_cost": 65478.89284558411
+    }
+   },
+   "MAT-0028": {
+    "normal": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 113064.16945285065
+    },
+    "kde": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 139236.3210266777
+    }
+   },
+   "MAT-0029": {
+    "normal": {
+     "fill_rate": 0.8764839294054734,
+     "cycle_service_level": 0.9090909090909091,
+     "total_cost": 613841.7856655043
+    },
+    "kde": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 84703.35513947552
+    }
+   },
+   "MAT-0033": {
+    "normal": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 20680.662234890766
+    },
+    "kde": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 21383.7120076641
+    }
+   },
+   "MAT-0038": {
+    "normal": {
+     "fill_rate": 0.9869356780934166,
+     "cycle_service_level": 0.9545454545454546,
+     "total_cost": 190985.85601922206
+    },
+    "kde": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 131063.26153228158
+    }
+   },
+   "MAT-0049": {
+    "normal": {
+     "fill_rate": 0.8936364506670832,
+     "cycle_service_level": 0.9090909090909091,
+     "total_cost": 81165.28915818266
+    },
+    "kde": {
+     "fill_rate": 0.9109215460125629,
+     "cycle_service_level": 0.9090909090909091,
+     "total_cost": 75078.14704106533
+    }
+   },
+   "MAT-0054": {
+    "normal": {
+     "fill_rate": 0.8422197370036487,
+     "cycle_service_level": 0.9090909090909091,
+     "total_cost": 136922.4226905427
+    },
+    "kde": {
+     "fill_rate": 0.826979166780253,
+     "cycle_service_level": 0.9090909090909091,
+     "total_cost": 146372.768067091
+    }
+   },
+   "MAT-0056": {
+    "normal": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 39920.16761335293
+    },
+    "kde": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 39404.00331097693
+    }
+   },
+   "MAT-0081": {
+    "normal": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 145127.33381373726
+    },
+    "kde": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 134940.9529147423
+    }
+   },
+   "MAT-0085": {
+    "normal": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 51393.0347009003
+    },
+    "kde": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 58240.9495872052
+    }
+   },
+   "MAT-0086": {
+    "normal": {
+     "fill_rate": 0.9265939676252177,
+     "cycle_service_level": 0.8636363636363636,
+     "total_cost": 3669897.9215566106
+    },
+    "kde": {
+     "fill_rate": 0.9294959863276339,
+     "cycle_service_level": 0.8636363636363636,
+     "total_cost": 3539760.092045055
+    }
+   },
+   "MAT-0087": {
+    "normal": {
+     "fill_rate": 0.9922192945059505,
+     "cycle_service_level": 0.9545454545454546,
+     "total_cost": 509646.92322350055
+    },
+    "kde": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 278695.99528388435
+    }
+   },
+   "MAT-0093": {
+    "normal": {
+     "fill_rate": 0.9175960829003508,
+     "cycle_service_level": 0.8636363636363636,
+     "total_cost": 5221813.334604902
+    },
+    "kde": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 400164.4314680227
+    }
+   },
+   "MAT-0095": {
+    "normal": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 284510.42170161346
+    },
+    "kde": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 412495.962109992
+    }
+   },
+   "MAT-0103": {
+    "normal": {
+     "fill_rate": 0.9279976327529056,
+     "cycle_service_level": 0.8181818181818182,
+     "total_cost": 3074730.5128572504
+    },
+    "kde": {
+     "fill_rate": 0.8923587124330183,
+     "cycle_service_level": 0.7727272727272727,
+     "total_cost": 4466620.080102452
+    }
+   },
+   "MAT-0105": {
+    "normal": {
+     "fill_rate": 0.7095053044295276,
+     "cycle_service_level": 0.8636363636363636,
+     "total_cost": 894867.3811923321
+    },
+    "kde": {
+     "fill_rate": 0.7591336459712722,
+     "cycle_service_level": 0.8636363636363636,
+     "total_cost": 752388.2592434506
+    }
+   },
+   "MAT-0116": {
+    "normal": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 104701.06011368343
+    },
+    "kde": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 132056.02948552062
+    }
+   },
+   "MAT-0126": {
+    "normal": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 230463.11294089488
+    },
+    "kde": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 294476.8490590416
+    }
+   },
+   "MAT-0131": {
+    "normal": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 432261.4631941864
+    },
+    "kde": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 440802.7606177492
+    }
+   },
+   "MAT-0132": {
+    "normal": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 42340.366087177
+    },
+    "kde": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 47215.681073703745
+    }
+   },
+   "MAT-0136": {
+    "normal": {
+     "fill_rate": 0.836565979005233,
+     "cycle_service_level": 0.8181818181818182,
+     "total_cost": 3599585.4512826116
+    },
+    "kde": {
+     "fill_rate": 0.8991250791029826,
+     "cycle_service_level": 0.9090909090909091,
+     "total_cost": 2329224.3324866123
+    }
+   },
+   "MAT-0141": {
+    "normal": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 76934.71893676693
+    },
+    "kde": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 100664.16011042785
+    }
+   },
+   "MAT-0142": {
+    "normal": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 270844.9663914364
+    },
+    "kde": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 196125.13442735016
+    }
+   },
+   "MAT-0159": {
+    "normal": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 77381.38906772908
+    },
+    "kde": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 81073.70703450084
+    }
+   },
+   "MAT-0171": {
+    "normal": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 49302.25469934388
+    },
+    "kde": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 60652.04086207554
+    }
+   },
+   "MAT-0177": {
+    "normal": {
+     "fill_rate": 0.8953638845630429,
+     "cycle_service_level": 0.9090909090909091,
+     "total_cost": 257183.95998348246
+    },
+    "kde": {
+     "fill_rate": 0.8755862101969643,
+     "cycle_service_level": 0.9090909090909091,
+     "total_cost": 293363.60281676997
+    }
+   },
+   "MAT-0184": {
+    "normal": {
+     "fill_rate": 0.5159253121222857,
+     "cycle_service_level": 0.9090909090909091,
+     "total_cost": 4456448.621863448
+    },
+    "kde": {
+     "fill_rate": 0.5521599673234104,
+     "cycle_service_level": 0.9090909090909091,
+     "total_cost": 4143793.3545174105
+    }
+   },
+   "MAT-0185": {
+    "normal": {
+     "fill_rate": 0.8832365298401658,
+     "cycle_service_level": 0.9090909090909091,
+     "total_cost": 2308664.3448847504
+    },
+    "kde": {
+     "fill_rate": 0.8768707624400754,
+     "cycle_service_level": 0.9090909090909091,
+     "total_cost": 2420481.276085604
+    }
+   },
+   "MAT-0192": {
+    "normal": {
+     "fill_rate": 0.9687300512319301,
+     "cycle_service_level": 0.9090909090909091,
+     "total_cost": 817516.4889799288
+    },
+    "kde": {
+     "fill_rate": 0.9598895699993264,
+     "cycle_service_level": 0.8636363636363636,
+     "total_cost": 994152.5058744783
+    }
+   },
+   "MAT-0196": {
+    "normal": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 71756.87488314693
+    },
+    "kde": {
+     "fill_rate": 1.0,
+     "cycle_service_level": 1.0,
+     "total_cost": 63475.73803427536
+    }
+   }
+  }
+ },
+ "E2_pareto": {
+  "weeks_of_cover_4": {
+   "mean_fill_rate": 0.8942965808351442,
+   "mean_total_cost": 1152616.2459550018
+  },
+  "normal_ss_95": {
+   "mean_fill_rate": 0.9440302783483457,
+   "mean_total_cost": 935354.7941000044
+  },
+  "minmax": {
+   "mean_fill_rate": 0.9838913713188664,
+   "mean_total_cost": 370943.0915840076
+  },
+  "empirical_q_95": {
+   "mean_fill_rate": 0.9541415682258619,
+   "mean_total_cost": 790422.3242001318
+  },
+  "kde_ss_95": {
+   "mean_fill_rate": 0.9586370609378378,
+   "mean_total_cost": 747877.6888008637
+  },
+  "kde_ss_90": {
+   "mean_fill_rate": 0.9130577990254394,
+   "mean_total_cost": 1231728.9214859812
+  },
+  "kde_ss_98": {
+   "mean_fill_rate": 0.9811707156110309,
+   "mean_total_cost": 453469.4616221135
+  },
+  "normal_ss_90": {
+   "mean_fill_rate": 0.9186858675115642,
+   "mean_total_cost": 1261272.6858696141
+  },
+  "normal_ss_98": {
+   "mean_fill_rate": 0.9684217530369793,
+   "mean_total_cost": 605853.494502787
+  }
+ },
+ "E3_lt_ablation": {
+  "total_cost": {
+   "stochastic_LT": 878269.6496965756,
+   "deterministic_LT": 855645.7213384748
+  },
+  "fill_rate": {
+   "stochastic_LT": 0.9534895353477953,
+   "deterministic_LT": 0.9549080257523063
+  }
+ },
+ "E4_sensitivity": {
+  "h0.15_pen1.5": {
+   "normal_cost": 582909.214548592,
+   "kde_cost": 492864.72124632675,
+   "kde_wins": true
+  },
+  "h0.15_pen2.5": {
+   "normal_cost": 902533.114017586,
+   "kde_cost": 746768.6286100086,
+   "kde_wins": true
+  },
+  "h0.15_pen4.0": {
+   "normal_cost": 1381968.9632210766,
+   "kde_cost": 1127624.4896555315,
+   "kde_wins": true
+  },
+  "h0.22_pen1.5": {
+   "normal_cost": 617618.1850429724,
+   "kde_cost": 531429.9893400352,
+   "kde_wins": true
+  },
+  "h0.22_pen2.5": {
+   "normal_cost": 937242.0845119667,
+   "kde_cost": 785333.8967037172,
+   "kde_wins": true
+  },
+  "h0.22_pen4.0": {
+   "normal_cost": 1416677.9337154576,
+   "kde_cost": 1166189.75774924,
+   "kde_wins": true
+  },
+  "h0.3_pen1.5": {
+   "normal_cost": 657285.5798936933,
+   "kde_cost": 575504.5814471308,
+   "kde_wins": true
+  },
+  "h0.3_pen2.5": {
+   "normal_cost": 976909.4793626873,
+   "kde_cost": 829408.4888108127,
+   "kde_wins": true
+  },
+  "h0.3_pen4.0": {
+   "normal_cost": 1456345.3285661777,
+   "kde_cost": 1210264.3498563357,
+   "kde_wins": true
+  }
+ },
+ "E5_disruption": {
+  "weeks_of_cover_4": {
+   "mean_fill_rate": 0.6312898385188067,
+   "mean_total_cost": 6110390.162684579,
+   "mean_stockouts": 9.003000000000002
+  },
+  "normal_ss_95": {
+   "mean_fill_rate": 0.7232696657756134,
+   "mean_total_cost": 5502723.737504466,
+   "mean_stockouts": 8.064
+  },
+  "kde_ss_95": {
+   "mean_fill_rate": 0.7517438714322492,
+   "mean_total_cost": 5203644.835678282,
+   "mean_stockouts": 7.466333333333333
+  }
+ }
+}

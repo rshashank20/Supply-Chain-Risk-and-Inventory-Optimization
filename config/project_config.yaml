@@ -1,0 +1,85 @@
+# Project configuration — all business assumptions in one place.
+# The generator, planning engine, optimizer and simulator all read this file,
+# so an experiment can be reproduced exactly from (config + seed).
+
+project:
+  name: "Risk-Aware Safety-Stock Optimization and Material Shortage DSS"
+  case_context: "Spectrum Tool Engineers Pvt. Ltd. (synthetic case study)"
+  seed: 42
+
+history:
+  start: "2024-10-01"
+  end: "2026-09-30"          # 24 months
+  planning_horizon_weeks: 12
+
+scale:
+  n_suppliers: 20
+  n_materials: 200
+  n_products: 40
+  n_production_orders: 1500
+
+# Supplier behaviour tiers. Lead times are lognormal-ish (gauss, floored at 3d).
+# late_p = probability a receipt is late; late_max = worst lateness in days.
+supplier_tiers:
+  reliable: {share: 0.30, lt_mean: 14, lt_sd: 3,  late_p: 0.08, late_max: 3,  defect: 0.005}
+  standard: {share: 0.45, lt_mean: 25, lt_sd: 7,  late_p: 0.25, late_max: 10, defect: 0.02}
+  risky:    {share: 0.25, lt_mean: 40, lt_sd: 14, late_p: 0.45, late_max: 25, defect: 0.05}
+
+# One supplier suffers a 6-week disruption -> realistic shortage events.
+disruption:
+  supplier_index: 6
+  start: "2025-03-01"
+  end: "2025-04-15"
+  lt_multiplier: 3.0
+
+material_categories:
+  # name, unit, base unit cost (actual cost ~ lognormal around base)
+  - ["alloy_steel", "kg", 180]
+  - ["tool_steel", "kg", 320]
+  - ["fasteners", "pcs", 4]
+  - ["carbide_inserts", "pcs", 95]
+  - ["abrasives", "pcs", 22]
+  - ["polymers", "kg", 140]
+  - ["electronics", "pcs", 210]
+  - ["lubricants", "ltr", 90]
+
+# Safety-stock experiment settings
+safety_stock:
+  service_levels: [0.90, 0.95, 0.98]
+  review_period_weeks: 1
+  holding_cost_rate_annual: 0.22   # 22% of unit value per year
+  ordering_cost_per_order: 1500    # INR
+  stockout_penalty_per_unit_short: 2.5  # multiple of unit cost (lost margin + expediting proxy)
+  kde_bandwidth: "silverman"       # or "scott"; CV used in experiment E1
+  monte_carlo_replications: 2000
+  train_months: 18
+  test_months: 6                  # temporal holdout: last 6 months
+
+# Scenario definitions for the disruption engine
+scenarios:
+  S0_normal:       {demand_mult: 1.0, lt_mult: 1.0, defect_mult: 1.0}
+  S1_lt_disrupt:   {demand_mult: 1.0, lt_mult: 2.5, defect_mult: 1.0}
+  S2_demand_surge:  {demand_mult: 1.6, lt_mult: 1.0, defect_mult: 1.0}
+  S3_quality:       {demand_mult: 1.0, lt_mult: 1.0, defect_mult: 4.0}
+  S4_critical_var:  {demand_mult: 1.3, lt_mult: 1.8, defect_mult: 1.0, critical_only: true}
+  S5_combined:      {demand_mult: 1.5, lt_mult: 2.2, defect_mult: 2.0}
+
+# Risk management module settings (read by src/risk_management/risk_engine.py)
+# All scoring bands are project-defined ordinal cutoffs (ISO 31000-style
+# probability x impact), NOT calibrated probabilities.
+risk_management:
+  lookback_days: 90              # "recent" window for OTD / lateness / volume features
+  min_receipts_expected_loss: 20 # n >= 20 receipt samples required for empirical disruption frequency
+  min_loss_events: 5             # n >= 5 risk_events in the loss-basis category required
+  # Ordinal bands (score 1..5). otd_bands: >=98 ->1, >=95 ->2, >=90 ->3, >=80 ->4, else 5.
+  otd_bands: [98, 95, 90, 80]
+  # lateness_bands: avg late days <0.5 ->1, <2 ->2, <5 ->3, <10 ->4, else 5.
+  lateness_bands: [0.5, 2, 5, 10]
+  # reject_bands: rejection rate <0.005 ->1, <0.01 ->2, <0.025 ->3, <0.05 ->4, else 5.
+  reject_bands: [0.005, 0.01, 0.025, 0.05]
+  # cover_bands: days of cover >=60 ->1, >=30 ->2, >=15 ->3, >=7 ->4, else 5.
+  cover_bands: [60, 30, 15, 7]
+  expedite_premium_rate: 0.05    # assumed expedite freight/premium as share of shipment value
+  quality_audit_cost_inr: 50000  # assumed supplier quality audit cost per engagement
+  ss_raise_fraction: 0.5         # safety_stock_raise raises SS by this fraction for cost estimate
+  shortage_flag_horizon_days: 30 # "open shortage flag" = projected stock (30d demand) < safety stock
